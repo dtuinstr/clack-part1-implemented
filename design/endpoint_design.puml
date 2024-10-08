@@ -1,0 +1,29 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+package YOUR_TEAM_NAME.clack.endpoint {
+
+    class Client {
+        + {static} DEFAULT_SERVER_NAME : String
+        + {static} DEFAULT_SERVER_PORT : int
+        - username : String <<final>>
+        - serverName : String <<final>>
+        - serverPort : int <<final>>
+        - messageToSend : Message
+        - messageReceived : Message
+        + Client(username, serverName, serverPort)
+        + Client(username, serverName)
+        + Client(username, serverPort)
+        + Client(username)
+        + start() : void
+        + readUserInput() : Message
+    '   + sendMessage() : void
+    '   + receiveMessage() : void
+        + printMessage() : void
+        + getUsername() : String
+        + getServerName() : String
+        + toString() : String
+    }
+
+}
+@enduml
